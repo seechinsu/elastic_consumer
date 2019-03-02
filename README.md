@@ -1,6 +1,6 @@
 # ElasticConsumer
 
-**TODO: Add description**
+A simple rabbitmq consumer genserver implementation for ingesting tweets into elasticsearch.
 
 ## Installation
 
