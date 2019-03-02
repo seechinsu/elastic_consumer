@@ -1,0 +1,86 @@
+2019-03-02 12:59:03 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.ElasticConsumer.Supervisor'}
+     Context:    start_error
+     Reason:     {'EXIT',{undef,[{'Elixir.ElasticConsumer',start_link,[],[]},{supervisor,do_start_child_i,3,[{file,"supervisor.erl"},{line,379}]},{supervisor,do_start_child,2,[{file,"supervisor.erl"},{line,365}]},{supervisor,'-start_children/2-fun-0-',3,[{file,"supervisor.erl"},{line,349}]},{supervisor,children_map,4,[{file,"supervisor.erl"},{line,1157}]},{supervisor,init_children,2,[{file,"supervisor.erl"},{line,315}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]}]}}
+     Offender:   [{pid,undefined},{id,'Elixir.ElasticConsumer'},{mfargs,{'Elixir.ElasticConsumer',start_link,[]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2019-03-02 12:59:03 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.1299.0>
+    registered_name: []
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.ElasticConsumer',{'EXIT',{undef,[{'Elixir.ElasticConsumer',start_link,[],[]},{supervisor,do_start_child_i,3,[{file,"supervisor.erl"},{line,379}]},{supervisor,do_start_child,2,[{file,"supervisor.erl"},{line,365}]},{supervisor,'-start_children/2-fun-0-',3,[{file,"supervisor.erl"},{line,349}]},{supervisor,children_map,4,[{file,"supervisor.erl"},{line,1157}]},{supervisor,init_children,2,[{file,"supervisor.erl"},{line,315}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]}]}}}},{'Elixir.ElasticConsumer.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.1298.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.1300.0>,normal}]
+    links: [<0.1298.0>,<0.43.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 610
+    stack_size: 27
+    reductions: 250
+  neighbours:
+2019-03-02 13:00:27 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.ElasticConsumer.Supervisor'}
+     Context:    start_error
+     Reason:     {undef,[{'Elixir.ElasticConsumer',init,[[{name,'Elixir.ElasticConsumer'}]],[]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+     Offender:   [{pid,undefined},{id,'Elixir.ElasticConsumer'},{mfargs,{'Elixir.ElasticConsumer',start_link,[]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2019-03-02 13:00:27 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.298.0>
+    registered_name: []
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.ElasticConsumer',{undef,[{'Elixir.ElasticConsumer',init,[[{name,'Elixir.ElasticConsumer'}]],[]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}}},{'Elixir.ElasticConsumer.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.297.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.299.0>,normal}]
+    links: [<0.297.0>,<0.43.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 610
+    stack_size: 27
+    reductions: 214
+  neighbours:
+2019-03-02 13:01:00 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.ElasticConsumer:init/1
+    pid: <0.301.0>
+    registered_name: []
+    exception exit: {{bad_return_value,[{queue,<<"tweets">>},{exchange,<<"twitter">>},{routing_key,<<>>},{prefetch_count,<<"10">>},{uri,<<"amqp://user:bitnami@localhost:5672">>}]},[{gen_server,init_it,6,[{file,"gen_server.erl"},{line,366}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: ['Elixir.ElasticConsumer.Supervisor',<0.299.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.300.0>]
+    dictionary: []
+    trap_exit: false
+    status: running
+    heap_size: 1598
+    stack_size: 27
+    reductions: 5370
+  neighbours:
+2019-03-02 13:01:00 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.ElasticConsumer.Supervisor'}
+     Context:    start_error
+     Reason:     {bad_return_value,[{queue,<<"tweets">>},{exchange,<<"twitter">>},{routing_key,<<>>},{prefetch_count,<<"10">>},{uri,<<"amqp://user:bitnami@localhost:5672">>}]}
+     Offender:   [{pid,undefined},{id,'Elixir.ElasticConsumer'},{mfargs,{'Elixir.ElasticConsumer',start_link,[]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2019-03-02 13:01:00 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.298.0>
+    registered_name: []
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.ElasticConsumer',{bad_return_value,[{queue,<<"tweets">>},{exchange,<<"twitter">>},{routing_key,<<>>},{prefetch_count,<<"10">>},{uri,<<"amqp://user:bitnami@localhost:5672">>}]}}},{'Elixir.ElasticConsumer.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.297.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.299.0>,normal}]
+    links: [<0.297.0>,<0.43.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 610
+    stack_size: 27
+    reductions: 217
+  neighbours:
