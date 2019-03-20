@@ -26,8 +26,8 @@ defmodule ElasticConsumer do
     elastic_create_index()
 
     [
-      queue: "tweets",
-      exchange: "twitter",
+      queue: "create_user",
+      exchange: "seraph",
       routing_key: "",
       prefetch_count: "10",
       uri: System.get_env("AMQP_URL")
@@ -35,18 +35,19 @@ defmodule ElasticConsumer do
   end
 
   defp elastic_create_index do
-    Index.create(@elastic_url, "twitter", %{})
+    Index.create(@elastic_url, "seraph", %{})
   end
 
   def handle_message(%Message{} = message) do
-    message = Jason.decode!(~s(#{message.payload}))
-    tweet = message["tweet"]
+    payload = Jason.decode!(~s(#{message.payload}))
 
     {:ok, response} =
       @elastic_url
-      |> Document.index_new("twitter", "tweet", %{message: tweet})
+      |> Document.index_new("seraph", "user", %{message: payload})
 
-    {:ok, indexed_doc} = Document.get(@elastic_url, "twitter", "tweet", response.body["_id"])
+    # IO.inspect(response)
+
+    {:ok, indexed_doc} = Document.get(@elastic_url, "seraph", "user", response.body["_id"])
 
     IO.inspect(indexed_doc.body["_source"]["message"])
 
@@ -60,6 +61,6 @@ defmodule ElasticConsumer do
 
   def consumer_tag() do
     {:ok, hostname} = :inet.gethostname()
-    "#{hostname}-example-consumer"
+    "#{hostname}-elastic-consumer"
   end
 end
