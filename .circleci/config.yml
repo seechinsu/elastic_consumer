@@ -25,7 +25,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Deploy Master to es-consumer-1
+          name: Deploy Master to es-consumer
           command: |
             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$ES_CONSUMER.git master
 workflows:
