@@ -22,6 +22,14 @@ defmodule ElasticConsumer do
   end
 
   ##### Consumer callbacks #####
+  @spec init() :: [
+          {:exchange, <<_::48>>}
+          | {:prefetch_count, <<_::16>>}
+          | {:queue, <<_::88>>}
+          | {:routing_key, <<>>}
+          | {:uri, nil | binary()},
+          ...
+        ]
   def init() do
     elastic_create_index()
 
@@ -49,7 +57,7 @@ defmodule ElasticConsumer do
 
     {:ok, indexed_doc} = Document.get(@elastic_url, "seraph", "user", response.body["_id"])
 
-    IO.inspect(indexed_doc.body["_source"]["message"])
+    # IO.inspect(indexed_doc)
 
     ack(message)
   rescue

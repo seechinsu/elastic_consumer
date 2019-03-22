@@ -23,7 +23,7 @@ use Mix.Config
 
 config :elastix,
   json_codec: Jason,
-  elastic_url: "http://localhost:9200"
+  elastic_url: System.get_env("ES_URL")
 
 # It is also possible to import configuration files, relative to this
 # directory. For example, you can emulate configuration per environment
