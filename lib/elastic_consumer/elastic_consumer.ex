@@ -51,9 +51,9 @@ defmodule ElasticConsumer do
 
     {:ok, response} =
       @elastic_url
-      |> Document.index_new("seraph", "user", %{message: payload})
+      |> Document.index_new("seraph", "user", payload)
 
-    # IO.inspect(response)
+    IO.inspect(response)
 
     {:ok, indexed_doc} = Document.get(@elastic_url, "seraph", "user", response.body["_id"])
 

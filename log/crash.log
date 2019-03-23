@@ -84,3 +84,123 @@
     stack_size: 27
     reductions: 217
   neighbours:
+2019-03-22 00:34:34 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.GenRMQ.Consumer:init/1
+    pid: <0.304.0>
+    registered_name: []
+    exception error: {function_clause,[{'Elixir.URI',parse,[nil],[{file,"lib/uri.ex"},{line,445}]},{'Elixir.URI',merge,2,[{file,"lib/uri.ex"},{line,572}]},{'Elixir.Elastix.HTTP',prepare_url,2,[{file,"lib/elastix/http.ex"},{line,11}]},{'Elixir.Elastix.Index',create,3,[{file,"lib/elastix/index.ex"},{line,20}]},{'Elixir.ElasticConsumer',init,0,[{file,"lib/elastic_consumer/elastic_consumer.ex"},{line,34}]},{'Elixir.GenRMQ.Consumer',init,1,[{file,"lib/consumer.ex"},{line,216}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]}]}
+    ancestors: ['Elixir.ElasticConsumer.Supervisor',<0.302.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.303.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 987
+    stack_size: 27
+    reductions: 340
+  neighbours:
+2019-03-22 00:34:34 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.ElasticConsumer.Supervisor'}
+     Context:    start_error
+     Reason:     {function_clause,[{'Elixir.URI',parse,[nil],[{file,"lib/uri.ex"},{line,445}]},{'Elixir.URI',merge,2,[{file,"lib/uri.ex"},{line,572}]},{'Elixir.Elastix.HTTP',prepare_url,2,[{file,"lib/elastix/http.ex"},{line,11}]},{'Elixir.Elastix.Index',create,3,[{file,"lib/elastix/index.ex"},{line,20}]},{'Elixir.ElasticConsumer',init,0,[{file,"lib/elastic_consumer/elastic_consumer.ex"},{line,34}]},{'Elixir.GenRMQ.Consumer',init,1,[{file,"lib/consumer.ex"},{line,216}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]}]}
+     Offender:   [{pid,undefined},{id,'Elixir.ElasticConsumer'},{mfargs,{'Elixir.ElasticConsumer',start_link,[]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2019-03-22 00:34:34 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.301.0>
+    registered_name: []
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.ElasticConsumer',{function_clause,[{'Elixir.URI',parse,[nil],[{file,"lib/uri.ex"},{line,445}]},{'Elixir.URI',merge,2,[{file,"lib/uri.ex"},{line,572}]},{'Elixir.Elastix.HTTP',prepare_url,2,[{file,"lib/elastix/http.ex"},{line,11}]},{'Elixir.Elastix.Index',create,3,[{file,"lib/elastix/index.ex"},{line,20}]},{'Elixir.ElasticConsumer',init,0,[{file,"lib/elastic_consumer/elastic_consumer.ex"},{line,34}]},{'Elixir.GenRMQ.Consumer',init,1,[{file,"lib/consumer.ex"},{line,216}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]}]}}},{'Elixir.ElasticConsumer.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.300.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.302.0>,normal}]
+    links: [<0.300.0>,<0.43.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 987
+    stack_size: 27
+    reductions: 241
+  neighbours:
+2019-03-22 00:35:53 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.GenRMQ.Consumer:init/1
+    pid: <0.304.0>
+    registered_name: []
+    exception error: {function_clause,[{'Elixir.URI',parse,[nil],[{file,"lib/uri.ex"},{line,445}]},{'Elixir.URI',merge,2,[{file,"lib/uri.ex"},{line,572}]},{'Elixir.Elastix.HTTP',prepare_url,2,[{file,"lib/elastix/http.ex"},{line,11}]},{'Elixir.Elastix.Index',create,3,[{file,"lib/elastix/index.ex"},{line,20}]},{'Elixir.ElasticConsumer',init,0,[{file,"lib/elastic_consumer/elastic_consumer.ex"},{line,34}]},{'Elixir.GenRMQ.Consumer',init,1,[{file,"lib/consumer.ex"},{line,216}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]}]}
+    ancestors: ['Elixir.ElasticConsumer.Supervisor',<0.302.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.303.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 987
+    stack_size: 27
+    reductions: 340
+  neighbours:
+2019-03-22 00:35:53 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.ElasticConsumer.Supervisor'}
+     Context:    start_error
+     Reason:     {function_clause,[{'Elixir.URI',parse,[nil],[{file,"lib/uri.ex"},{line,445}]},{'Elixir.URI',merge,2,[{file,"lib/uri.ex"},{line,572}]},{'Elixir.Elastix.HTTP',prepare_url,2,[{file,"lib/elastix/http.ex"},{line,11}]},{'Elixir.Elastix.Index',create,3,[{file,"lib/elastix/index.ex"},{line,20}]},{'Elixir.ElasticConsumer',init,0,[{file,"lib/elastic_consumer/elastic_consumer.ex"},{line,34}]},{'Elixir.GenRMQ.Consumer',init,1,[{file,"lib/consumer.ex"},{line,216}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]}]}
+     Offender:   [{pid,undefined},{id,'Elixir.ElasticConsumer'},{mfargs,{'Elixir.ElasticConsumer',start_link,[]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2019-03-22 00:35:53 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.301.0>
+    registered_name: []
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.ElasticConsumer',{function_clause,[{'Elixir.URI',parse,[nil],[{file,"lib/uri.ex"},{line,445}]},{'Elixir.URI',merge,2,[{file,"lib/uri.ex"},{line,572}]},{'Elixir.Elastix.HTTP',prepare_url,2,[{file,"lib/elastix/http.ex"},{line,11}]},{'Elixir.Elastix.Index',create,3,[{file,"lib/elastix/index.ex"},{line,20}]},{'Elixir.ElasticConsumer',init,0,[{file,"lib/elastic_consumer/elastic_consumer.ex"},{line,34}]},{'Elixir.GenRMQ.Consumer',init,1,[{file,"lib/consumer.ex"},{line,216}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]}]}}},{'Elixir.ElasticConsumer.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.300.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.302.0>,normal}]
+    links: [<0.300.0>,<0.43.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 987
+    stack_size: 27
+    reductions: 241
+  neighbours:
+2019-03-22 00:36:59 =SUPERVISOR REPORT====
+     Supervisor: {local,'Elixir.ElasticConsumer.Supervisor'}
+     Context:    start_error
+     Reason:     {#{'__exception__' => true,'__struct__' => 'Elixir.ArgumentError',message => <<"you must merge onto an absolute URI">>},[{'Elixir.URI',merge,2,[{file,"lib/uri.ex"},{line,551}]},{'Elixir.Elastix.HTTP',prepare_url,2,[{file,"lib/elastix/http.ex"},{line,11}]},{'Elixir.Elastix.Index',create,3,[{file,"lib/elastix/index.ex"},{line,20}]},{'Elixir.ElasticConsumer',init,0,[{file,"lib/elastic_consumer/elastic_consumer.ex"},{line,34}]},{'Elixir.GenRMQ.Consumer',init,1,[{file,"lib/consumer.ex"},{line,216}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+     Offender:   [{pid,undefined},{id,'Elixir.ElasticConsumer'},{mfargs,{'Elixir.ElasticConsumer',start_link,[]}},{restart_type,permanent},{shutdown,5000},{child_type,worker}]
+
+2019-03-22 00:36:59 =CRASH REPORT====
+  crasher:
+    initial call: Elixir.GenRMQ.Consumer:init/1
+    pid: <0.334.0>
+    registered_name: []
+    exception error: {#{'__exception__' => true,'__struct__' => 'Elixir.ArgumentError',message => <<"you must merge onto an absolute URI">>},[{'Elixir.URI',merge,2,[{file,"lib/uri.ex"},{line,551}]},{'Elixir.Elastix.HTTP',prepare_url,2,[{file,"lib/elastix/http.ex"},{line,11}]},{'Elixir.Elastix.Index',create,3,[{file,"lib/elastix/index.ex"},{line,20}]},{'Elixir.ElasticConsumer',init,0,[{file,"lib/elastic_consumer/elastic_consumer.ex"},{line,34}]},{'Elixir.GenRMQ.Consumer',init,1,[{file,"lib/consumer.ex"},{line,216}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: ['Elixir.ElasticConsumer.Supervisor',<0.332.0>]
+    message_queue_len: 0
+    messages: []
+    links: [<0.333.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 987
+    stack_size: 27
+    reductions: 611
+  neighbours:
+2019-03-22 00:36:59 =CRASH REPORT====
+  crasher:
+    initial call: application_master:init/4
+    pid: <0.331.0>
+    registered_name: []
+    exception exit: {{{shutdown,{failed_to_start_child,'Elixir.ElasticConsumer',{#{'__exception__' => true,'__struct__' => 'Elixir.ArgumentError',message => <<"you must merge onto an absolute URI">>},[{'Elixir.URI',merge,2,[{file,"lib/uri.ex"},{line,551}]},{'Elixir.Elastix.HTTP',prepare_url,2,[{file,"lib/elastix/http.ex"},{line,11}]},{'Elixir.Elastix.Index',create,3,[{file,"lib/elastix/index.ex"},{line,20}]},{'Elixir.ElasticConsumer',init,0,[{file,"lib/elastic_consumer/elastic_consumer.ex"},{line,34}]},{'Elixir.GenRMQ.Consumer',init,1,[{file,"lib/consumer.ex"},{line,216}]},{gen_server,init_it,2,[{file,"gen_server.erl"},{line,374}]},{gen_server,init_it,6,[{file,"gen_server.erl"},{line,342}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}}},{'Elixir.ElasticConsumer.Application',start,[normal,[]]}},[{application_master,init,4,[{file,"application_master.erl"},{line,138}]},{proc_lib,init_p_do_apply,3,[{file,"proc_lib.erl"},{line,249}]}]}
+    ancestors: [<0.330.0>]
+    message_queue_len: 1
+    messages: [{'EXIT',<0.332.0>,normal}]
+    links: [<0.330.0>,<0.43.0>]
+    dictionary: []
+    trap_exit: true
+    status: running
+    heap_size: 610
+    stack_size: 27
+    reductions: 242
+  neighbours:
