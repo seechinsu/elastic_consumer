@@ -1,6 +1,6 @@
 # ElasticConsumer
 
-A simple rabbitmq consumer genserver implementation for ingesting tweets into elasticsearch.
+A simple rabbitmq consumer genserver implementation for ingesting docs into elasticsearch.
 
 ## Installation
 
