@@ -1,7 +1,7 @@
 defmodule ElasticConsumer do
   require Logger
   alias GenRMQ.Message
-  alias Elastix.{Document, Index}
+  alias Elastix.{Document, Index, Mapping}
 
   @behaviour GenRMQ.Consumer
   @elastic_url Elastix.config(:elastic_url)
@@ -32,6 +32,7 @@ defmodule ElasticConsumer do
         ]
   def init() do
     elastic_create_index()
+    elastic_create_user_mapping()
 
     [
       queue: "create_user",
@@ -46,14 +47,32 @@ defmodule ElasticConsumer do
     Index.create(@elastic_url, "seraph", %{})
   end
 
+  defp elastic_create_user_mapping do
+    mapping = %{
+      properties: %{
+        id: %{type: "integer"},
+        email: %{type: "text"},
+        inserted_at: %{type: "date"},
+        updated_at: %{type: "date"},
+        profiles: %{type: "nested"},
+        projects: %{type: "nested"},
+        avatar: %{type: "object"}
+      }
+    }
+
+    Mapping.put(@elastic_url, "seraph", "user", mapping)
+  end
+
   def handle_message(%Message{} = message) do
-    payload = Jason.decode!(~s(#{message.payload}))
+    payload =
+      message
+      |> Map.fetch!(:payload)
+      |> Jason.decode!()
+      |> Map.drop(["event"])
 
     {:ok, response} =
       @elastic_url
-      |> Document.index_new("seraph", "user", payload)
-
-    IO.inspect(response)
+      |> Document.index("seraph", "user", payload["id"], payload)
 
     {:ok, indexed_doc} = Document.get(@elastic_url, "seraph", "user", response.body["_id"])
 
