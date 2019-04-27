@@ -24,6 +24,7 @@ defmodule ElasticConsumer do
   ##### Consumer callbacks #####
   @spec init() :: [
           {:exchange, <<_::48>>}
+          | {:exchange_type, <<_::48>>}
           | {:prefetch_count, <<_::16>>}
           | {:queue, <<_::88>>}
           | {:routing_key, <<>>}
@@ -36,8 +37,9 @@ defmodule ElasticConsumer do
 
     [
       queue: "create_user",
-      exchange: "seraph",
-      routing_key: "",
+      exchange: "seraph.user",
+      exchange_type: "direct",
+      routing_key: "cmd.create.user",
       prefetch_count: "10",
       uri: System.get_env("AMQP_URL")
     ]
@@ -74,9 +76,7 @@ defmodule ElasticConsumer do
       @elastic_url
       |> Document.index("seraph", "user", payload["id"], payload)
 
-    {:ok, indexed_doc} = Document.get(@elastic_url, "seraph", "user", response.body["_id"])
-
-    # IO.inspect(indexed_doc)
+    {:ok, _indexed_doc} = Document.get(@elastic_url, "seraph", "user", response.body["_id"])
 
     ack(message)
   rescue

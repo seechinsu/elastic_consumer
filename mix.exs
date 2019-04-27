@@ -25,7 +25,7 @@ defmodule ElasticConsumer.MixProject do
     [
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
-      {:gen_rmq, git: "https://github.com/seechinsu/gen_rmq"},
+      {:gen_rmq, git: "https://github.com/seechinsu/gen_rmq.git"},
       {:jason, "~> 1.1"},
       {:plug_cowboy, "~> 2.0"},
       {:elastix, "~> 0.7.1"}
